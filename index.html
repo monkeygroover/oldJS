@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
   <script type="application/javascript">
-  var N = 48000;  // # of dots to use, multiple of 12 please!!
+  var N = 12000;  // # of dots to use, multiple of 12 please!!
 
     var col='5555ff';//text colour.
     var font = 'times';
@@ -32,6 +32,11 @@
         return (((Math.random() + Math.random() + Math.random() + Math.random() + Math.random() + Math.random()) - 3) / 3) 
     }
 
+	function shadeColor(color, percent) {
+		var f=color.split(","),t=percent<0?0:255,p=percent<0?percent*-1:percent,R=parseInt(f[0].slice(4)),G=parseInt(f[1]),B=parseInt(f[2]);
+		return "rgb("+(Math.round((t-R)*p)+R)+","+(Math.round((t-G)*p)+G)+","+(Math.round((t-B)*p)+B)+")";
+	}
+	
     function init()
     {    
         //setup all points
@@ -110,9 +115,11 @@
             var x1 = x0*(ca*cc-sa*sb*sc) - (y0*sa*cb) + z0*(ca*sc+sa*sb*cc);
             var y1 = x0*(sa*cc+sb*ca*sc) +  (y0*ca*cb) + z0*(sa*sc-sb*ca*cc);
             var z1 = -x0*sc*cb + y0*sb + z0*cb*cc;
-        
-            ctx.fillStyle = "rgb(200,0,0)";
-            ctx.fillRect(centreX + (600*x1)/(z1 + 9), centerY + (600*y1)/(z1 + 9), 1, 1);
+           
+	
+            ctx.fillStyle = shadeColor("rbg(63,131,163)", (-z1 / 6) );
+			
+            ctx.fillRect(centreX + (600*x1)/(z1 + 9), centerY + (600*y1)/(z1 + 9), 3-z1, 3-z1);
         }
 
         if (!paused)
