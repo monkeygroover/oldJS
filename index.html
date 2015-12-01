@@ -117,7 +117,7 @@
             var z1 = -x0*sc*cb + y0*sb + z0*cb*cc;
            
 	
-            ctx.fillStyle = shadeColor("rbg(63,131,163)", (-z1 / 6) );
+            ctx.fillStyle = shadeColor("rbg(63,131,163)", -(-z1 / 6) );
 			
             ctx.fillRect(centreX + (600*x1)/(z1 + 9), centerY + (600*y1)/(z1 + 9), 3-z1, 3-z1);
         }
