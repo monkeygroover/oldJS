@@ -80,7 +80,6 @@
         b += 0.01;
         c += 0.03;
 
-
         var ca = Math.cos(a);
         var sa = Math.sin(a);
         var cb = Math.cos(b);
@@ -90,7 +89,9 @@
 
         var canvas = document.getElementById('view');
         var ctx = canvas.getContext('2d');
-
+	
+	ctx.canvas.width  = window.innerWidth;
+        ctx.canvas.height = window.innerHeight;
         ctx.clearRect(0, 0, canvas.width, canvas.height)
         ctx.globalAlpha=0.3
         		
