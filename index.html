@@ -59,6 +59,11 @@
         for(i=0; i < N/12; i++) {xa[i+N/12*10] =-1; ya[i+N/12*10] = 1; za[i+N/12*10] = i*24/N - 1;}
         for(i=0; i < N/12; i++) {xa[i+N/12*11] =-1; ya[i+N/12*11] =-1; za[i+N/12*11] = i*24/N - 1;}
 
+	// "fuzz" all the points in the cube to make it look blurred
+	for (i = 0; i < N; i++) xa[i] = xa[i] - 0.05 + Math.random() * 0.1
+	for (i = 0; i < N; i++) ya[i] = ya[i] - 0.05 + Math.random() * 0.1
+	for (i = 0; i < N; i++) za[i] = za[i] - 0.05 + Math.random() * 0.1
+
         //shape b
         for(i=0; i < N; i++) 
         {
