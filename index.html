@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8"/>
   <script type="application/javascript">
-	var N = 12000;  // # of dots to use, multiple of 12 please!!
+    var N = 12000;  // # of dots to use, multiple of 12 please!!
 
-	var R = 63, G = 131, B = 163
+    var R = 63, G = 131, B = 163
 	
     //shape a
     var xa = new Array();
@@ -92,10 +92,10 @@
         var ctx = canvas.getContext('2d');
 
         ctx.clearRect(0, 0, canvas.width, canvas.height)
-        
-        centreX = canvas.width/ 2;
-        //centerY = window.document.body.clientHeight / 2;
-        centerY = 200
+        ctx.globalAlpha=0.3
+        		
+        centreX = canvas.width / 2;
+        centerY = canvas.height /2
 
         for (i = 0; i < N; i++)
         {
